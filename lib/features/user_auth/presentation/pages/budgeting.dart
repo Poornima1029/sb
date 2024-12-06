@@ -57,7 +57,8 @@ class _BudgetingPageState extends State<BudgetingPage> {
                   : (doc['amount'] as num).toDouble()),
         );
 
-        recentTransactions = expenseSnapshot.docs.map((doc) => {
+        recentTransactions = expenseSnapshot.docs.map((doc) =>
+        {
           'type': doc['type'],
           'amount': doc['amount'],
           'date': (doc['date'] as Timestamp).toDate(),
@@ -279,7 +280,8 @@ class _BudgetingPageState extends State<BudgetingPage> {
                     style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
-                      "Amount: ${tx['amount']}\nDate: ${DateFormat('yyyy-MM-dd').format(tx['date'])}"),
+                      "Amount: ${tx['amount']}\nDate: ${DateFormat('yyyy-MM-dd')
+                          .format(tx['date'])}"),
                 ),
               );
             }).toList(),
@@ -318,7 +320,8 @@ class _BudgetingPageState extends State<BudgetingPage> {
                     style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
-                      "Amount: ${debt['amount']}\nDate: ${DateFormat('yyyy-MM-dd').format(debt['date'])}"),
+                      "Amount: ${debt['amount']}\nDate: ${DateFormat(
+                          'yyyy-MM-dd').format(debt['date'])}"),
                   trailing: IconButton(
                     icon: Icon(Icons.delete, color: Colors.red),
                     onPressed: () {
